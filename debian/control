@@ -1,0 +1,16 @@
+Source: libdphys-macaddress-perl
+Section: perl
+Priority: optional
+Maintainer: Elmar S. Heeb <elmar@heebs.ch>
+Build-Depends: debhelper (>= 9)
+Build-Depends-Indep: perl (>= 5.14.0)
+Standards-Version: 3.9.5
+Homepage: https://metacpan.org/release/DPHYS-MacAddress
+
+Package: libdphys-macaddress-perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}
+Description: represent a MAC address
+ A Perl Moo class to represent a MAC address.  Allows only valid
+ MAC addresses (specified in one of a number of formats) and can
+ convert them to some supported formats.
