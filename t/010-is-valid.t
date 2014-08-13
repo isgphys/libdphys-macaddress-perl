@@ -4,6 +4,7 @@ use warnings;
 use 5.014;
 
 use Test::More;
+use Test::Exception;
 
 use DPHYS::MacAddress;
 
@@ -27,5 +28,8 @@ foreach my $macaddr (qw(
 )) {
     ok(!DPHYS::MacAddress::is_valid($macaddr), "$macaddr is not a valid MAC address");
 }
+
+# make sure is_valid is a class method only
+throws_ok(sub { DPHYS::MacAddress->new()->is_valid() }, qr{class method}, 'DPHYS::MacAddress::is_valid is a class method only');
 
 done_testing();
