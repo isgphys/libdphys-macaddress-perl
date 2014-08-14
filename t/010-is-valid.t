@@ -16,6 +16,8 @@ foreach my $macaddr (qw(
     01-23-45-67-89-AB
     0123.4567.89ab
     0123.4567.89AB
+    0123456789ab
+    0123456789AB
 )) {
     ok(DPHYS::MacAddress::is_valid($macaddr), "$macaddr is a valid MAC address");
 }
