@@ -47,4 +47,9 @@ sub hex {
     return unpack('H12', $self->binary());
 }
 
+sub colons {
+    my ( $self ) = @_;
+    return join(':', unpack('H2' x 6, $self->binary()));
+}
+
 1;
