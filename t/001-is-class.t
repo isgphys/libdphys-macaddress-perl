@@ -7,6 +7,6 @@ use Test::More;
 
 use DPHYS::MacAddress;
 
-is(ref(DPHYS::MacAddress->new()), 'DPHYS::MacAddress', 'DPHYS::MacAddress must be a class package');
+is(ref(DPHYS::MacAddress->new('00:11:22:33:44:55')), 'DPHYS::MacAddress', 'DPHYS::MacAddress must be a class');
 
 done_testing();

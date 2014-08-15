@@ -19,7 +19,8 @@ foreach my $macaddr (qw(
     0123456789ab
     0123456789AB
 )) {
-    ok(DPHYS::MacAddress::is_valid($macaddr), "$macaddr is a valid MAC address");
+    my $mac = DPHYS::MacAddress->new($macaddr);
+    is(ref($mac), 'DPHYS::MacAddress', "generate object for $macaddr");
 }
 
 # invalid MAC addresses
@@ -28,11 +29,7 @@ foreach my $macaddr (qw(
     ab:cd:ef:gh:ij:kl
     XYZ
 )) {
-    ok(!DPHYS::MacAddress::is_valid($macaddr), "$macaddr is not a valid MAC address");
+    throws_ok(sub { DPHYS::MacAddress->new($macaddr) }, qr{invalid MAC});
 }
-
-# make sure is_valid is a class method only
-throws_ok(sub { DPHYS::MacAddress->new('00:11:22:33:44:55')->is_valid() },
-    qr{class method}, 'DPHYS::MacAddress::is_valid is a class method only');
 
 done_testing();
