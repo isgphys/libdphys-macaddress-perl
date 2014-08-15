@@ -42,4 +42,9 @@ sub BUILDARGS {
     return { binary => $mac };
 };
 
+sub hex {
+    my ( $self ) = @_;
+    return unpack('H12', $self->binary());
+}
+
 1;
