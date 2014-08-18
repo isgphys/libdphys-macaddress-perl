@@ -58,3 +58,40 @@ sub cisco {
 }
 
 1;
+
+__END__
+
+=head1 SYNOPSIS
+
+  use DPHYS::MacAddress
+
+  my $mac = DPHYS::MacAddress->new('01:23:45:67:89:AB');
+  say $mac->colons();  # 01:23:45:67:89:ab
+  say $mac->cisco();   # 0123.4567.89ab
+
+  say DPHYS::MacAddress->new('XYZXYZ')->colons(); # 58:59:5A:58:59:5A
+
+  DPHYS::MacAddress->new('FOO'); # throws error, invalid MAC address
+
+  DPHYS::MacAddress::is_valid('0123456789ab');  # true
+  DPHYS::MacAddress::is_valid('FOO');           # false
+
+=head1 DESCRIPTION
+
+The Moo Class DPHYS::MacAddress represents valid MAC addresses.  The
+constructor accepts either a string of 6 bytes (48 bits) as the binary
+representation of the MAC address or any of a number of string representations.
+
+In the first example given the constructor is called with a typical colon
+separated string of hex digits.  The output shows the same string again
+(converted to lower case) and alternatively in the format used by CISCO three
+groups of four hex digits separated by dots.
+
+If given a string of 6 bytes it is assumed to represent the MAC address
+literally.  Such strings are not typically composed of printable characters.
+They may however occur naturally as parts of network data.
+
+If given a invalid MAC address the constructor throws an exception.
+
+The helper function C<is_valid> can be used to test for validity of a MAC
+address without throwing an exception.
