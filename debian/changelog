@@ -1,5 +1,5 @@
-libdphys-macaddress-perl (1) UNRELEASED; urgency=low
+libdphys-macaddress-perl (1) unstable; urgency=low
 
   * Initial Release.
 
- -- Elmar S. Heeb <elmar@heebs.ch>  Tue, 12 Aug 2014 17:07:44 +0200
+ -- Elmar S. Heeb <elmar@heebs.ch>  Fri, 15 Aug 2014 13:17:47 +0200
