@@ -57,6 +57,11 @@ sub cisco {
     return join('.', unpack('H4' x 3, $self->binary()));
 }
 
+sub dashes {
+    my ( $self ) = @_;
+    return uc(join('-', unpack('H2' x 6, $self->binary())));
+}
+
 1;
 
 __END__
