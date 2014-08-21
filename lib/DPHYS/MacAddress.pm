@@ -62,6 +62,8 @@ sub dashes {
     return uc(join('-', unpack('H2' x 6, $self->binary())));
 }
 
+use overload q("") => sub {shift->colons};
+
 1;
 
 __END__
