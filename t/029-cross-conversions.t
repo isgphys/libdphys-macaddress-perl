@@ -13,4 +13,7 @@ is( DPHYS::MacAddress->new('01:23:45:ab:cd:ef')->cisco(), '0123.45ab.cdef',
 is( DPHYS::MacAddress->new('01-23-45-AB-CD-EF')->cisco(), '0123.45ab.cdef',
     'binary 01-23-45-AB-CD-EF is cisco 0123.45ab.cdef');
 
+is( DPHYS::MacAddress->new('01:23:45:ab:cd:ef')->dashes(), '01-23-45-AB-CD-EF',
+    'colons 01:23:45:ab:cd:ef is cisco 01-23-45-AB-CD-EF');
+
 done_testing();
