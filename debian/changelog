@@ -1,3 +1,9 @@
+libdphys-macaddress-perl (1.1.1) unstable; urgency=medium
+
+  * updated dependencies (dh-dzil-refresh)
+
+ -- Elmar S. Heeb <elmar@heebs.ch>  Mon, 25 Aug 2014 14:07:58 +0200
+
 libdphys-macaddress-perl (1.1) unstable; urgency=medium
 
   * added stringification overload
