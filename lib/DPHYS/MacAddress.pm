@@ -64,6 +64,11 @@ sub dashes {
 
 use overload q("") => sub {shift->colons};
 
+use overload q(<=>) => sub {
+    my ($x, $y) = @_;
+    return "$x" cmp "$y";
+};
+
 1;
 
 __END__
