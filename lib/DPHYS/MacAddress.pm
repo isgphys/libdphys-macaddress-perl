@@ -67,6 +67,11 @@ sub is_multicast {
     return !! vec($self->binary(), 0, 1);
 }
 
+sub is_local {
+    my ( $self ) = @_;
+    return !! vec($self->binary(), 1, 1);
+}
+
 use overload q("") => sub {shift->colons};
 
 
