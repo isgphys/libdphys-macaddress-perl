@@ -15,4 +15,8 @@ cmp_ok( $mac1, '==', $mac1, 'same object should be equal');
 cmp_ok( $mac2, '==', $mac1, 'different object with the same MAC address should be equal');
 cmp_ok( $mac3, '!=', $mac1, 'different MAC will not be equal');
 
+cmp_ok( $mac1, 'eq', $mac1, 'same object should be equal');
+cmp_ok( $mac2, 'eq', $mac1, 'different object with the same MAC address should be equal');
+cmp_ok( $mac3, 'ne', $mac1, 'different MAC will not be equal');
+
 done_testing();
