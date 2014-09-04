@@ -62,6 +62,11 @@ sub dashes {
     return uc(join('-', unpack('H2' x 6, $self->binary())));
 }
 
+sub is_multicast {
+    my ( $self ) = @_;
+    return !! vec($self->binary(), 0, 1);
+}
+
 use overload q("") => sub {shift->colons};
 
 
