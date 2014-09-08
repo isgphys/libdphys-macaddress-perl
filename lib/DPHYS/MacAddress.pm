@@ -4,7 +4,6 @@ package DPHYS::MacAddress;
 # ABSTRACT: represent a MAC address
 
 use Carp;
-
 use Moo;
 
 sub _to_binary {
