@@ -1,3 +1,9 @@
+libdphys-macaddress-perl (1.3.2) unstable; urgency=medium
+
+  * fixed build dependency on dh-dist-zilla
+
+ -- Elmar S. Heeb <elmar@heebs.ch>  Tue, 09 Sep 2014 12:13:13 +0200
+
 libdphys-macaddress-perl (1.3.1) unstable; urgency=medium
 
   * expanded documentation
