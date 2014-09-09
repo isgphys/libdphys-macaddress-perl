@@ -113,5 +113,19 @@ They may however occur naturally as parts of network data.
 
 If given a invalid MAC address the constructor throws an exception.
 
-The helper function C<is_valid> can be used to test for validity of a MAC
-address without throwing an exception.
+=method is_valid
+
+The class function DPHYS::MacAddress::is_valid can be used to test the validity
+of a MAC address underneath it is the same function used in the constructor to
+reject invalid arguments.  Unlike the constructor it does not throw an
+exception when given an invalid MAC address and just returns false.
+
+=method new
+
+C<$mac = DPHYS::MacAddress->new('01:23:45:67:89:ab')> constructs a new
+C<DPHYS::MacAddress> object.  These objects have a number of methods available.
+
+=method colons
+
+C<$mac->colons()> returns the MAC address in colon separated for with pairs of
+hex digits.
