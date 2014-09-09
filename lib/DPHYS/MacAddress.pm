@@ -127,5 +127,32 @@ C<DPHYS::MacAddress> object.  These objects have a number of methods available.
 
 =method colons
 
-C<$mac->colons()> returns the MAC address in colon separated for with pairs of
+C<$mac->colons()> returns the MAC address in colon separated form with pairs of
 hex digits.
+
+=method cisco
+
+C<$mac->cisco()> returns the MAC address in dot separated form with groups of
+four hex digits like it is used by CISCO.
+
+=method dashes
+
+Much like C<colons> but the MAC address uses dashes C<-> as separators.  This
+format is often used on Microsofts platforms.
+
+=method hex
+
+Just the 12 hex digits representing the MAC address.
+
+=method is_multicast
+
+True when the MAC address is a multicast address, false otherwise.
+
+=method is_local
+
+True for MAC addresses designated for locally assigned addresses, false otherwise.
+
+=method BUILDARGS
+
+This method is not supposed to be called directly.  It enables the constructor
+to be called with the single argument being the MAC address.
